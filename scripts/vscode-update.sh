@@ -4,7 +4,7 @@ code --list-extensions | sed -e 's/^/code --install-extension /' > /home/$USER/.
 
 cp ~/.config/Code/User/settings.json /home/$USER/.scripts/vscode-configs/
 
-cd /home/$USER/MEGA/.scripts/vscode-configs/
+cd /home/$USER/.scripts/vscode-configs/
 
 git status
 
