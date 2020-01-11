@@ -4,9 +4,8 @@ cd .scripts
 
 echo "Enter the github username:"
 read username
-#echo $username
 
-echo "Enter the name repository:"
+echo "Enter the name repository where the configs will be stored:"
 read repo
 
 git clone https://github.com/$username/$repo
@@ -40,13 +39,11 @@ chmod 777 /home/$USER/.bashrc
 echo $repo
 
 sudo echo "alias vscodeupdate='cd ~/.scripts/ && ./vscode-update.sh'" >> ~/.zshrc
+sudo echo "alias vscodeupdate='cd ~/.scripts/ && ./vscode-update.sh'" >> ~/.bashrc
 
 chmod 775 ~/.scripts/vscode-update.sh
 
-
 echo 'Plugin Installed...'
-
-
-
+echo "Reload your terminal and try command 'vscodeupdate' ;)"
 
 
