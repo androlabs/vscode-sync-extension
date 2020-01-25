@@ -29,7 +29,7 @@ echo "git pull" >> vscode-update.sh
 
 echo "git add -A" >> vscode-update.sh
 echo "git commit -m "[UPDATE]"" >> vscode-update.sh
-echo "git push" >> vscode-update.sh
+echo "git push --set-upstream origin master" >> vscode-update.sh
 
 echo "echo 'Check your git ;)'!" >> vscode-update.sh
 
