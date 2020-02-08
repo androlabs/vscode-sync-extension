@@ -1,4 +1,4 @@
-echo 'VSCODE UPDATE...configs and plugins.'
+echo '🆙 VSCODE UPDATE...configs and plugins.'
 
 code --list-extensions | sed -e 's/^/code --install-extension /' > /home/$USER/.scripts/vscode-configs/vscode-plugins.sh
 
@@ -12,8 +12,8 @@ git fetch
 git pull
 
 git add -A
-git commit -m "feat: update plugins and settings"
+git commit -m "feat: 🚀 update plugins and settings"
 git push
 
 cd ~
-echo 'Check your git ;)'!
+echo 'Check your git 😊'!

@@ -6,14 +6,14 @@ cd /home/$USER/
 mkdir .scripts
 cd .scripts
 
-echo "Enter the github username:"
+echo -n "👥 Enter the github username: "
 read username
 
-echo "Enter the name repository where the configs will be stored:"
+echo -n "📦 Enter the name repository where the configs will be stored: "
 read repo
 
 
-PS3='Enter mode clone: '
+PS3='Enter clone mode: '
 options=("SSH" "HTTPS")
 select opt in "${options[@]}"
 do
@@ -49,6 +49,6 @@ sudo echo "alias vscodeupdate='cd ~/.scripts/ && ./vscode-update.sh'" >> ~/.bash
 
 chmod 775 ~/.scripts/vscode-update.sh
 
-echo 'Plugin Installed...'
-echo "Reload your terminal and try command 'vscodeupdate' ;)"
+echo 'Plugin Installed... 🚀'
+echo "Reload your terminal and try command 'vscodeupdate' 😊"
 
