@@ -1,3 +1,7 @@
+#!/bin/bash
+
+path_download=$(pwd)
+
 cd /home/$USER/
 mkdir .scripts
 cd .scripts
@@ -8,30 +12,32 @@ read username
 echo "Enter the name repository where the configs will be stored:"
 read repo
 
-git clone https://github.com/$username/$repo
-cd $repo
 
-cd ~/.scripts/
-touch vscode-update.sh
+PS3='Enter mode clone: '
+options=("SSH" "HTTPS")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "SSH")
+            echo "You chose mode SSH"
+            git clone git@github.com:$username/$repo.git
+            
+            break
+            ;;
+        "HTTPS")
+            echo "You chose mode HTTPS"
+            git clone https://github.com/$username/$repo
+            
+            break
+            ;;
+        
+        *) echo "invalid option $REPLY";;
+    esac
+done
 
-echo 'echo 'VSCODE UPDATE...configs and plugins.'' >> vscode-update.sh
+cd $path_download/scripts/
+cp vscode-update.sh ~/.scripts
 
-echo "code --list-extensions | sed -e 's/^/code --install-extension /' > /home/$USER/.scripts/vscode-configs/vscode-plugins.sh" >> vscode-update.sh
-
-echo "cp ~/.config/Code/User/settings.json /home/$USER/.scripts/vscode-configs/" >> vscode-update.sh
-
-echo "cd /home/$USER/.scripts/vscode-configs/" >> vscode-update.sh
-
-echo "git status" >> vscode-update.sh
-
-echo "git fetch" >> vscode-update.sh
-echo "git pull" >> vscode-update.sh
-
-echo "git add -A" >> vscode-update.sh
-echo "git commit -m "[UPDATE]"" >> vscode-update.sh
-echo "git push --set-upstream origin master" >> vscode-update.sh
-
-echo "echo 'Check your git ;)'!" >> vscode-update.sh
 
 chmod 777 /home/$USER/.zshrc
 chmod 777 /home/$USER/.bashrc
@@ -45,5 +51,4 @@ chmod 775 ~/.scripts/vscode-update.sh
 
 echo 'Plugin Installed...'
 echo "Reload your terminal and try command 'vscodeupdate' ;)"
-
 

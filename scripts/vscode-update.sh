@@ -12,7 +12,8 @@ git fetch
 git pull
 
 git add -A
-git commit -m "[UPDATE]"
+git commit -m "feat: update plugins and settings"
 git push
 
+cd ~
 echo 'Check your git ;)'!
