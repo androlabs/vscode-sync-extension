@@ -8,7 +8,7 @@
 <hr/>
 
 ```
-$ git clone https://github.com/gabriel-roque/vscode-sync-extension && cd vscode-sync-extension
+$ git clone https://github.com/androlabs/vscode-sync-extension && cd vscode-sync-extension
 
 $ ./install.sh
 ```
